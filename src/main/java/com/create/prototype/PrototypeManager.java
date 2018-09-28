@@ -87,8 +87,7 @@ abstract class Document implements Cloneable, Serializable {
 	public Document deepClone() {
 		try {
 			ByteArrayOutputStream bao = new ByteArrayOutputStream();
-			ObjectOutputStream oos;
-			oos = new ObjectOutputStream(bao);
+			ObjectOutputStream oos = new ObjectOutputStream(bao);
 			oos.writeObject(this);
 			ByteArrayInputStream bis = new ByteArrayInputStream(bao.toByteArray());
 			ObjectInputStream ois = new ObjectInputStream(bis);
@@ -108,6 +107,7 @@ class Word extends Document {
 
 	private static final long serialVersionUID = -5962837063600161416L;
 
+	@Override
 	public void doSomething() {
 		System.out.println("Word do something");
 	}
@@ -116,6 +116,7 @@ class Word extends Document {
 class Excel extends Document {
 	private static final long serialVersionUID = -188500621751552409L;
 
+	@Override
 	public void doSomething() {
 		System.out.println("Excel do something");
 	}

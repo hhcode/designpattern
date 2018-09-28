@@ -10,11 +10,12 @@ import com.util.Utils;
  */
 public class BuilderDemo {
 	public static void main(String[] args) {
-		ActorBuilder ab; // 针对抽象建造者编程
-		ab = (ActorBuilder) Utils.getBean("buildClassName"); // 反射生成具体建造者对象
+		// 针对抽象建造者编程 反射生成具体建造者对象
+		ActorBuilder ab = (ActorBuilder) Utils.getBean("buildClassName");
 
 		ActorController ac = new ActorController();
-		Actor actor = ac.construct(ab); // 通过指挥者创建完整的建造者对象
+		// 通过指挥者创建完整的建造者对象
+		Actor actor = ac.construct(ab);
 
 		String type = actor.getType();
 		System.out.println(type + "的外观：");
