@@ -11,8 +11,10 @@ import com.util.Utils;
 public class AdapterDemo {
 	public static void main(String[] args) {
 		// 针对抽象目标接口编程
-		ScoreOperation operation = (ScoreOperation) Utils.getBean("adapterClassName"); // 读取配置文件，反射生成对象
-		int scores[] = { 84, 76, 50, 69, 90, 91, 88, 96 }; // 定义成绩数组
+		// 读取配置文件，反射生成对象
+		ScoreOperation operation = (ScoreOperation) Utils.getBean("adapterClassName");
+		// 定义成绩数组
+		int scores[] = { 84, 76, 50, 69, 90, 91, 88, 96 };
 		int result[];
 		int score;
 
